@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/SmasherCoder/fitr/issues"
   },
-  "homepage": "https://github.com/SmasherCoder/fitr#readme"
+  "homepage": "https://github.com/SmasherCoder/fitr#readme",
+  "dependencies": {
+    "@apollo/client": "^3.5.9"
+  }
 }
