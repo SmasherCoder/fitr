@@ -8,6 +8,7 @@ import { LOAD_WORKOUTS,
   }  from "./actions";
 import { useReducer } from 'react';
 
-export const reducer = (state, action) => {
-  switch (action.type)
-}
+// export const reducer = (state, action) => {
+//   switch (action.type)
+
+// }

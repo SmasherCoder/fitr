@@ -6,13 +6,16 @@ export const QUERY_USER = gql`
       username
       email
       password
-      workout {
+      workouts {
+        description
+        createdAt
         exercises {
-
+          exerciseBody
+          createdAt
         }
       }
       follow {
-
+        username
       }
     }
   }
@@ -23,13 +26,28 @@ export const QUERY_ME = gql`
     username
     email
     password
-    workout {
+    workouts {
+      description
+      createdAt
       exercises {
-
+        exerciseBody
+        createdAt
       }
     }
     follow {
+      username
+    }
+  }
+`;
 
+export const QUERY_WORKOUT = gql`
+  query workout($id: ID!) {
+    description
+    createdAt
+    username
+    exercises {
+      exerciseBody
+      createdAt
     }
   }
 `;
