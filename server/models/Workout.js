@@ -4,7 +4,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const workoutSchema = newSchema(
     {
-        thoughtText: {
+        workoutText: {
             type: String,
              require: 'Please title your Workout Routine',
              minlength: 1,
