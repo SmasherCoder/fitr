@@ -70,3 +70,5 @@ const handleFormSubmit = async event => {
 };
 
 export default Login;
+
+// should retrieve the apollo instance in app.js to retrieve the token evrytime we make GraphQL req
