@@ -3,21 +3,20 @@ const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
 const { authMiddleware } = require("./utils/auth");
 
-//curious about path 
 const path = require("path");
 
 const db = require("./config/connection");
 
-//waiting for schemas so this is commented out for now
-//const { typeDefs, resolvers } = require("./schemas");
+//note these const files are work in process
+const { typeDefs, resolvers } = require("./schemas");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 const startServer = async() => {
     const server = new ApolloServer({
-        //typeDefs,
-        //resolvers,
+        typeDefs,
+        resolvers,
         context: authMiddleware
     });
 

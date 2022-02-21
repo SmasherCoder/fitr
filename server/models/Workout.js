@@ -1,10 +1,13 @@
-const {Schema, model } = require('mongoose');
+
+const { Schema, model } = require('mongoose');
+
 const exerciseSchema = require('./Reaction');
 const dateFormat = require('../utils/dateFormat');
 
 const workoutSchema = newSchema(
     {
         description: {
+
             type: String,
              require: 'Please title your Workout Routine',
              minlength: 1,
@@ -26,4 +29,9 @@ const workoutSchema = newSchema(
             getters: true
         }
     }
+
 );
+
+const Workout = model('Workout', workoutSchema);
+
+module.exports = Workout;
