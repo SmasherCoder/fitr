@@ -1,10 +1,12 @@
-const {Schema, model } = require('mongoose');
+
+const { Schema, model } = require('mongoose');
+
 const exerciseSchema = require('./Reaction');
 const dateFormat = require('../utils/dateFormat');
 
-const workoutSchema = newSchema(
+const workoutSchema = new Schema(
     {
-        thoughtText: {
+        workoutText: {
             type: String,
              require: 'Please title your Workout Routine',
              minlength: 1,
@@ -13,7 +15,7 @@ const workoutSchema = newSchema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: timestamp => dateFormt(timestamp)
+            get: timestamp => dateFormat(timestamp)
         },
         username: {
             type: String,

@@ -1,10 +1,10 @@
-const { User } = require("../models");
+const { User, Workout } = require("../models");
 const { signToken } = require("../utils/auth");
 const { AuthenticationError } = require("apollo-server-express");
 
 const resolvers = {
-    // for now use User model from Abel to reference
-    //pretend modeling population of 'workout' - model, typeDef, and resolver will need to be added soon
+    // for now use User Workout model from Abel to reference
+    //consider adding friends aspect later as more functionality will be added 
     Query: {
         me: async (parent, args, context) => {
             if (context.user) {
@@ -18,6 +18,17 @@ const resolvers = {
             throw new AuthenticationError("Not logged in!");
         },
     },
+    //add users
+    user:  async (parent, { username }) => {
+        return User.findOne({username})
+        .select("-__v -password")
+        .populate('workouts');
+    },
+    //add workouts (multiple)
+    workout: async ( parent, { _id }) => {
+        return Thought.findOne({ _id });
+    },
+
     Mutation: {
         addUser: async (parent, args) => {
             try {
@@ -47,8 +58,23 @@ const resolvers = {
             return { token, user };
         },
         // save workout model create workout model and remove workout model goes here
+        addWorkout: async (parent, args, context) => {
+            if (context.user) {
+                const workout = await Workout.create({ ...args, username: context.user.username });
+
+                await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { workouts: workout._id } },
+                    { new: true }
+                );
+
+                return workout;
+            }
+
+            throw new AuthenticationError("Not logged in!");
+        }
         // same with friends functionality - friend model must be added
     }
-}
+};
 
 module.exports = resolvers;
