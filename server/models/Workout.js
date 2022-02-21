@@ -13,7 +13,7 @@ const workoutSchema = newSchema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: timestamp => dateFormta(timestamp)
+            get: timestamp => dateFormt(timestamp)
         },
         username: {
             type: String,
@@ -27,3 +27,7 @@ const workoutSchema = newSchema(
         }
     }
 );
+
+const Workout = model('Workout', workoutSchema);
+
+module.exports = Workout;
