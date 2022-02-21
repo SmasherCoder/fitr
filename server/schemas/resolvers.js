@@ -1,6 +1,6 @@
+const { AuthenticationError } = require("apollo-server-express");
 const { User, Workout } = require("../models");
 const { signToken } = require("../utils/auth");
-const { AuthenticationError } = require("apollo-server-express");
 
 const resolvers = {
     // for now use User Workout model from Abel to reference
@@ -9,25 +9,35 @@ const resolvers = {
         me: async (parent, args, context) => {
             if (context.user) {
                 const userData = await User.findOne({ _id: context.user._id })
-                .select("-__v -password")
+                .select('-__v -password')
                 .populate("workouts")
+                .populate("follow");
 
                 return userData;
             }
 
             throw new AuthenticationError("Not logged in!");
         },
-    },
-    //add users
-    user:  async (parent, { username }) => {
-        return User.findOne({username})
-        .select("-__v -password")
-        .populate('workouts');
-    },
-    //add workouts (multiple)
+        users: async() => {
+            const users = User.find()
+            .select('-__v -password')
+            .populate("workouts")
+            .populate("follow");
+    
+            return users;
+        },
+        user: async (parent, { username }) => {
+            return User.findOne({username})
+            .select("-__v -password")
+            .populate("workouts")
+            .populate("follow");
+        },
+
+            //add workouts (multiple)
     workout: async ( parent, { _id }) => {
-        return Thought.findOne({ _id });
+        return Workout.findOne({ _id });
     },
+},
 
     Mutation: {
         addUser: async (parent, args) => {
