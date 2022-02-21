@@ -4,7 +4,7 @@ const { Schema, model } = require('mongoose');
 const exerciseSchema = require('./Reaction');
 const dateFormat = require('../utils/dateFormat');
 
-const workoutSchema = newSchema(
+const workoutSchema = new Schema(
     {
         description: {
 
@@ -16,7 +16,7 @@ const workoutSchema = newSchema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: timestamp => dateFormta(timestamp)
+            get: timestamp => dateFormat(timestamp)
         },
         username: {
             type: String,
@@ -29,7 +29,6 @@ const workoutSchema = newSchema(
             getters: true
         }
     }
-
 );
 
 const Workout = model('Workout', workoutSchema);
