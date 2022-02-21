@@ -10,7 +10,7 @@ const typeDefs = gql `
         _id: ID
         username: String
         email: String
-        workout: [workouts]
+        workout: [Workout]
         follow: [User]
         followCount: Int
     }
@@ -27,7 +27,7 @@ const typeDefs = gql `
         workoutText: String
         username: String
         createdAt: String
-        exercise: [exerciseSchema]
+        exercise: [Exercise]
     }
 
     type Auth {

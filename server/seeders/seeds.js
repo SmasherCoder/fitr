@@ -22,14 +22,16 @@ db.once('open', async () => {
 
   // create follows
   for (let i = 0; i < 100; i += 1) {
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-    const { _id: userId } = createdUsers.ops[randomUserIndex];
+    console.log(createdUsers.insertedCount);
+    const randomUserIndex = Math.floor(Math.random() * createdUsers.insertedCount);
+    console.log(randomUserIndex);
+    const { _id: userId } = createdUsers[randomUserIndex];
 
     let followId = userId;
 
     while (followId === userId) {
-      const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-      followId = createdUsers.ops[randomUserIndex];
+      const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
+      followId = createdUsers[randomUserIndex];
     }
 
     await User.updateOne({ _id: userId }, { $addToSet: { follow: followId } });
@@ -40,8 +42,8 @@ db.once('open', async () => {
   for (let i = 0; i < 100; i += 1) {
     const workoutText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-    const { username, _id: userId } = createdUsers.ops[randomUserIndex];
+    const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
+    const { username, _id: userId } = createdUsers[randomUserIndex];
 
     const createdWorkout = await Workout.create({ workoutText, username });
 
@@ -57,8 +59,8 @@ db.once('open', async () => {
   for (let i = 0; i < 100; i += 1) {
     const exerciseBody = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
-    const { username } = createdUsers.ops[randomUserIndex];
+    const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
+    const { username } = createdUsers[randomUserIndex];
 
     const randomWorkoutIndex = Math.floor(Math.random() * createdThoughts.length);
     const { _id: workoutId } = createdWorkouts[randomWorkoutIndex];
