@@ -10,7 +10,7 @@ const typeDefs = gql `
         _id: ID
         username: String
         email: String
-        workout: [Workout]
+        workouts: [Workout]
         follow: [User]
         followCount: Int
     }
@@ -24,10 +24,10 @@ const typeDefs = gql `
 
     type Workout {
         _id: ID 
-        workoutText: String
+        description: String
         username: String
         createdAt: String
-        exercise: [Exercise]
+        exercises: [Exercise]
     }
 
     type Auth {
@@ -39,14 +39,18 @@ const typeDefs = gql `
         me: User
         users: [User]
         user(username: String!): User
-        workouts(username: String): [Workout]
+        workouts(username: String!): [Workout]
         workout(_id: ID!): Workout
+        exercises(username: String!): [Exercise]
+        allExercises: [Exercise]
+        exercise(_id: ID!): Exercise
     }
 
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
-        addWorkout(workoutText: String!): Workout
+        addExercise(exerciseBody: String!): Exercise
+        addWorkout(description: String!, exercises: [ID]!): Workout
     }
 
 `;

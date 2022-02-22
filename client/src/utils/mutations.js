@@ -27,8 +27,8 @@ export const CREATE_USER = gql`
 `;
 
 export const CREATE_EXERCISE = `
-  mutation createExercise($exerciseBody: String!) {
-    createExercise(exerciseBody: $exerciseBody) {
+  mutation addExercise($exerciseBody: String!) {
+    addExercise(exerciseBody: $exerciseBody) {
       exerciseBody
       username
       createdAt
@@ -37,8 +37,8 @@ export const CREATE_EXERCISE = `
 `;
 
 export const CREATE_WORKOUT = gql`
-  mutation createWorkout($description: String!, $exercises: [ID]!) {
-    createWorkout(description: $description, exercises: $exercises) {
+  mutation addWorkout($description: String!, $exercises: [ID]!) {
+    addWorkout(description: $description, exercises: $exercises) {
       description
       createdAt
       username
