@@ -21,6 +21,27 @@ export const QUERY_USER = gql`
   }
 `;
 
+export const QUERY_ALL_USERS = gql`
+  {
+    users {
+      _id
+      username
+      email
+      workouts {
+        description
+        createdAt
+        exercises {
+          exerciseBody
+          createdAt
+        }
+      }
+      follow {
+        username
+      }
+    }
+  }
+`
+
 export const QUERY_ME = gql`
   me {
     username
@@ -51,3 +72,33 @@ export const QUERY_WORKOUT = gql`
     }
   }
 `;
+
+export const QUERY_ALL_EXERCISES = gql`
+  {
+    allExercises {
+      _id
+      exerciseBody
+      username
+    }
+  }
+`;
+
+export const QUERY_EXERCISES = gql`
+  query exercises($username: String!) {
+    exercises(username: $username) {
+      _id
+      username
+      exerciseBody
+    }
+  }
+`;
+
+export const QUERY_EXERCISE = gql`
+  query exercise($_id: ID!) {
+    exercise(_id: $_id) {
+      exerciseBody
+      _id
+      username
+    }
+  }
+`
