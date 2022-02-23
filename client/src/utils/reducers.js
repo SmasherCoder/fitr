@@ -4,8 +4,8 @@ import {
   LOAD_WORKOUTS,
   LOAD_FRIENDS,
   ADD_WORKOUT,
-  // UPDATE_WORKOUT,
-  // REMOVE_WORKOUT,
+  UPDATE_WORKOUT,
+  REMOVE_WORKOUT,
   // ADD_FRIEND,
   // REMOVE_FRIEND
   }  from "./actions";
@@ -28,8 +28,31 @@ export const reducer = (state, action) => {
         return {
           ...state,
           workoutOpen: true,
-          workout: [...state.workout, action.workout]
-        }
+          workout: [...state.workout, action.workouts]
+        };
+      
+      case UPDATE_WORKOUT:
+        return {
+          ...state,
+          workoutOpen: true,
+          workout: state.workout.map(workout => {
+            if (action._id === workout._id) {
+              workout.exercises = action.exercises
+            }
+            return workout
+          })
+        };
+
+      case REMOVE_WORKOUT: 
+      let newState = state.workout.filter(workouts => {
+       return workouts._id !== action._id;
+      });
+
+      return {
+        ...state,
+        workoutOpen: newState.length > 0,
+        workout: newState
+      };
 
   default:
     return state;
