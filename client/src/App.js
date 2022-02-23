@@ -1,7 +1,10 @@
 import React from "react";
+import './index.css';
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import background from "./img/gym.png";
 
 import Navigation from "./components/Nav";
 import Home from './pages/Home';
@@ -25,6 +28,7 @@ const client = new ApolloClient({
 
 function App() {
   return (
+    <div style={{ backgroundImage:  `url(${background})`, height: "100vh" }}>
     <ApolloProvider client = {client}>
       <Router>
         <>
@@ -41,6 +45,7 @@ function App() {
         </>
       </Router>
     </ApolloProvider>
+    </div>
   );
 }
 

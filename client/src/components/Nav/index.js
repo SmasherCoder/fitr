@@ -4,7 +4,7 @@ import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
 
-import Auth from '../../utils/auth';
+// import Auth from '../../utils/auth';
 
 const Navigation = () => {
 
@@ -27,16 +27,24 @@ const Navigation = () => {
                 About Fitr
               </Nav.Link>
               <br></br>
-              {Auth.loggedIn() ? (
+              <Nav.Link as={Link} to='/login'>
+                Login
+              </Nav.Link>
+              <br></br>
+              <Nav.Link as={Link} to='/signup'>
+                Sign Up
+              </Nav.Link>
+               <br></br>
+              {/* {Auth.loggedIn() ? (
                 <>
                 <Nav.Link as={Link} to='/follow'>
                   View Followed Friends
                 </Nav.Link>
                 <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
-              ) : (
+              ) :(
                 <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
-              )}
+              )} */}
           </Nav>
         </Navbar.Collapse>
       </Container>
