@@ -4,7 +4,7 @@ import { setContext } from '@apollo/client/link/context';
 import { ApolloClient } from 'apollo-boost';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-// import Header from './components/Header';
+import Header from './components/Header';
 
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -33,7 +33,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
       <div className='flex-column justify-flex-start min-100-vh'>
-      {/* <Header /> */}
+     <Header />
       <div className='container'>
         <Switch>
       <Route exact path="/login" component={Login} />
