@@ -1,15 +1,13 @@
 import React from 'react';
-import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import logo from './logo.svg';
+import { ApolloClient } from 'apollo-boost';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
-
+// import Header from './components/Header';
 
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-
-
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -33,32 +31,19 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
+      <Router>
       <div className='flex-column justify-flex-start min-100-vh'>
-      <Header />
+      {/* <Header /> */}
       <div className='container'>
         <Switch>
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
-      <Route component={NoMatch} />
+      {/* <Route component={NoMatch} /> */}
+      {/* no page for NoMatch must be set up */}
       </Switch>
       </div>
       </div>
-<div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    </Router>
     </ApolloProvider>
     
   );
