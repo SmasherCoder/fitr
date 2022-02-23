@@ -1,39 +1,56 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Auth from '../../utils/auth';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { ApolloClient } from 'apollo-boost';
+
+import Nav from '../Nav';
+
+import Home from '../../pages/Home';
+import Login from '../../pages/Login';
+import Signup from '../../pages/Signup';
+import NoMatch from '../../pages/NoMatch';
+
+const httpLink = createHttpLink({
+    uri: '/graphql',
+  });
+  
+  const authLink = setContext((_, { headers }) => {
+    const token = localStorage.getItem('id_token');
+    return {
+      headers: {
+        ...headers,
+        authorization: token ? `Bearer ${token}` : '',
+      },
+    };
+  });
+  
+  const client = new ApolloClient({
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache(),
+  });
 
 const Header = () => {
-    const logout = event => {
-        event.preventDefault();
-        Auth.logout();
-    };
 
     return (
-        <header>
-            <div>
-                <Link to="/">
-                    <h1>Fitr</h1>
-                </Link>
-
-                <nav className="text-center">
-                    {Auth.loggedIn() ? (
-                        <>
-                        <Link to="/profile">My Profile</Link>
-                        <a href="/" onClick={logout}>
-                            Logout
-                        </a>
-                        </>
-                    ) : (
-                        <>
-                        <Link to="/login">Login</Link>
-                        <Link to="/signup">Signup</Link>
-                        </>
-                    )
-                }
-                </nav>
-            </div>
-        </header>
-    )
+    <ApolloProvider client={client}>
+        <Router>
+        <div className='flex-column justify-flex-start min-100-vh'>
+        <Nav />
+       <Header />
+        <div className='container'>
+          <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+  
+        <Route component={NoMatch} /> 
+        </Switch>
+        </div>
+        </div>
+      </Router>
+     </ApolloProvider>
+    );
 }
 
 export default Header;
