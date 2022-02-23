@@ -6,8 +6,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 
+import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import NoMatch from './pages/NoMatch';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -36,10 +38,11 @@ function App() {
      <Header />
       <div className='container'>
         <Switch>
+      <Route exact path="/" component={Home} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
-      {/* <Route component={NoMatch} /> */}
-      {/* no page for NoMatch must be set up */}
+
+      <Route component={NoMatch} /> 
       </Switch>
       </div>
       </div>
