@@ -34,7 +34,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className='flex-column justify-flex-start min-100-vh'>
-      <Header />
+      <Nav />
       <div className='container'>
         <Switch>
       <Route exact path="/login" component={Login} />
@@ -55,10 +55,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
         </a>
-      </header>
-    </div>
+    </header>
+</div>
     </ApolloProvider>
     
   );

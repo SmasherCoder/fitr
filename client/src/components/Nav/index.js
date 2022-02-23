@@ -1,11 +1,11 @@
-// Placeholder Header Index file
-
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { fadumbbell } from '@fortawesome/free-solid-svg-icons';
 // import { Link } from 'react-router-dom';
 
 import Auth from '../../utils/auth';
 
-const Header = () => {
+const Nav = () => {
   const logout = event => {
     event.preventDefault();
     Auth.logout();
@@ -15,7 +15,8 @@ const Header = () => {
     <header className="bg-secondary mb-4 py-2 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <Link to="/">
-          <h1>Fitr</h1>
+          <span className='icon'><FontAwesomeIcon icon={fadumbbell}></FontAwesomeIcon></span>
+          <h1>FITr</h1>
         </Link>
 
         <nav className="text-center">
@@ -38,4 +39,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Nav;
