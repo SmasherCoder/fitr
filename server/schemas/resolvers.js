@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Workout } = require("../models");
+const { User, Workout, Exercise } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -34,9 +34,19 @@ const resolvers = {
         },
 
             //add workouts (multiple)
-    workout: async ( parent, { _id }) => {
-        return Workout.findOne({ _id });
-    },
+        workout: async ( parent, { _id }) => {
+            return Workout.findOne({ _id });
+        },
+        allExercises: async(parent, args) => {
+            return await Exercise.find();
+        },
+        exercises: async( parent, { username }, context) => {
+            return await Exercise.find({ username: username });
+
+        },
+        exercise: async( parent, {_id}, context) => {
+            return await Exercise.findById({ _id })
+        }
 },
 
     Mutation: {
@@ -70,7 +80,12 @@ const resolvers = {
         // save workout model create workout model and remove workout model goes here
         addWorkout: async (parent, args, context) => {
             if (context.user) {
-                const workout = await Workout.create({ ...args, username: context.user.username });
+                const exercises = [];
+                for (let i=0; i<args.exercises.length; i++) {
+                    const exercise = await Exercise.findById({ _id: args.exercises[i] })
+                    exercises.push(exercise);
+                }
+                const workout = await Workout.create({ ...args, username: context.user.username, exercises: exercises });
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
@@ -82,6 +97,13 @@ const resolvers = {
             }
 
             throw new AuthenticationError("Not logged in!");
+        },
+        addExercise: async (parent, args, context) => {
+            if (context.user) {
+                const exercise = await Exercise.create({ ...args, username: context.user.username });
+                return exercise;
+            }
+            throw new AuthenticationError('Not logged in!');
         }
         // same with friends functionality - friend model must be added
     }
