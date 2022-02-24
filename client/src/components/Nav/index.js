@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, NavLink} from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
