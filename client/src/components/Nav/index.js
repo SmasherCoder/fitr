@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink} from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
+import About from '../../pages/About';
 
 // import Auth from '../../utils/auth';
 
@@ -19,21 +20,21 @@ const Navigation = () => {
         </Navbar.Brand>
         <Navbar.Collapse id='navbar'>
           <Nav className='ml-auto'>
-            <Nav.Link as={Link} to='/'>
+            <NavLink as={Link} to='/'>
               What Others Are Doing
-              </Nav.Link>
+              </NavLink>
               <br></br>
-              <Nav.Link as={Link} to='/'>
+              <NavLink as={Link} to='/about'>
                 About Fitr
-              </Nav.Link>
+              </NavLink>
               <br></br>
-              <Nav.Link as={Link} to='/login'>
+              <NavLink as={Link} to='/login'>
                 Login
-              </Nav.Link>
+              </NavLink>
               <br></br>
-              <Nav.Link as={Link} to='/signup'>
+              <NavLink as={Link} to='/signup'>
                 Sign Up
-              </Nav.Link>
+              </NavLink>
                <br></br>
               {/* {Auth.loggedIn() ? (
                 <>
@@ -63,6 +64,9 @@ const Navigation = () => {
               </Tab.Pane>
               <Tab.Pane eventKey='signup'>
                 <Signup handleModalClose={() => setShowModal(false)} />
+              </Tab.Pane>
+              <Tab.Pane eventKey='about'>
+                <About handleModalClose={() => setShowModal(false)} />
               </Tab.Pane>
           </Tab.Content>
         </Modal.Body>
