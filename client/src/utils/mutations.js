@@ -37,11 +37,12 @@ export const CREATE_EXERCISE = `
 `;
 
 export const CREATE_WORKOUT = gql`
-  mutation addWorkout($description: String!, $exercises: [ID]!) {
-    addWorkout(description: $description, exercises: $exercises) {
+  mutation addWorkout($description: String!, $exercises: [ID]!, $scheduled: String!) {
+    addWorkout(description: $description, exercises: $exercises, scheduled: $scheduled) {
       description
       createdAt
       username
+      scheduled
       exercises {
         exerciseBody
         username

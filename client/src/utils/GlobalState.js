@@ -6,7 +6,11 @@ const { Provider } = WorkoutContext;
 
 const WorkoutProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useWorkoutReducer({
-
+    users: [],
+    workouts: [],
+    friends: [],
+    currentDay: ''
+    
   });
 
   return <Provider value={[state, dispatch]} {...props} />

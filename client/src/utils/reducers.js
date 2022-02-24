@@ -3,11 +3,8 @@ import { useReducer } from 'react';
 import { 
   LOAD_WORKOUTS,
   LOAD_FRIENDS,
-  ADD_WORKOUT,
-  UPDATE_WORKOUT,
-  REMOVE_WORKOUT,
-  // ADD_FRIEND,
-  // REMOVE_FRIEND
+  LOAD_USERS,
+  UPDATE_SELECTED_DAY
   }  from "./actions";
 
 export const reducer = (state, action) => {
@@ -15,52 +12,32 @@ export const reducer = (state, action) => {
     case LOAD_WORKOUTS:
       return {
         ...state,
-        workouts: [...action.workouts],
+        workouts: [...action.workouts]
       };
 
-    case LOAD_FRIENDS:
+    case LOAD_FRIENDS: 
       return {
         ...state,
-        friends: [...action.friends],
+        friends: [...action.friends]
       };
 
-      case ADD_WORKOUT:
-        return {
-          ...state,
-          workoutOpen: true,
-          workout: [...state.workout, action.workouts]
-        };
-      
-      case UPDATE_WORKOUT:
-        return {
-          ...state,
-          workoutOpen: true,
-          workout: state.workout.map(workout => {
-            if (action._id === workout._id) {
-              workout.exercises = action.exercises
-            }
-            return workout
-          })
-        };
+    case LOAD_USERS:
+      return {
+        ...state,
+        users: [...action.users]
+      };
 
-      case REMOVE_WORKOUT: 
-      let newState = state.workout.filter(workouts => {
-       return workouts._id !== action._id;
-      });
+    case UPDATE_SELECTED_DAY: {
 
       return {
         ...state,
-        workoutOpen: newState.length > 0,
-        workout: newState
+        currentDay: action.day
       };
 
-  default:
-    return state;
-
-}
+    }
+  }
 };
 
-
-export function useProductReducer(initialState) {
+export function useWorkoutReducer(initialState) {
   return useReducer(reducer, initialState);
 }

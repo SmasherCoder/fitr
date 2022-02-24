@@ -1,14 +1,14 @@
-import { gql } from '@apollo.client';
+import { gql } from '@apollo/client';
 
 export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
       username
       email
-      password
       workouts {
         description
         createdAt
+        scheduled
         exercises {
           exerciseBody
           createdAt
@@ -30,6 +30,7 @@ export const QUERY_ALL_USERS = gql`
       workouts {
         description
         createdAt
+        scheduled
         exercises {
           exerciseBody
           createdAt
@@ -42,30 +43,32 @@ export const QUERY_ALL_USERS = gql`
   }
 `
 
-export const QUERY_ME = gql`
-  me {
-    username
-    email
-    password
-    workouts {
-      description
-      createdAt
-      exercises {
-        exerciseBody
-        createdAt
-      }
-    }
-    follow {
-      username
-    }
-  }
-`;
+// export const QUERY_ME = gql`
+//   me {
+//     username
+//     email
+//     password
+//     workouts {
+//       description
+//       createdAt
+//       scheduled
+//       exercises {
+//         exerciseBody
+//         createdAt
+//       }
+//     }
+//     follow {
+//       username
+//     }
+//   }
+// `;
 
 export const QUERY_WORKOUT = gql`
   query workout($id: ID!) {
     description
     createdAt
     username
+    scheduled
     exercises {
       exerciseBody
       createdAt
