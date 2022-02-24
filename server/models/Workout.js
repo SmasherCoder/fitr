@@ -22,7 +22,7 @@ const workoutSchema = new Schema(
             required: true
         },
         scheduled: {
-            type: Date,
+            type: String,
             required: true
         },
         exercises: [

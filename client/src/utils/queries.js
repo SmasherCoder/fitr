@@ -9,6 +9,7 @@ export const QUERY_USER = gql`
       workouts {
         description
         createdAt
+        scheduled
         exercises {
           exerciseBody
           createdAt
@@ -30,6 +31,7 @@ export const QUERY_ALL_USERS = gql`
       workouts {
         description
         createdAt
+        scheduled
         exercises {
           exerciseBody
           createdAt
@@ -50,6 +52,7 @@ export const QUERY_ME = gql`
     workouts {
       description
       createdAt
+      scheduled
       exercises {
         exerciseBody
         createdAt
@@ -66,6 +69,7 @@ export const QUERY_WORKOUT = gql`
     description
     createdAt
     username
+    scheduled
     exercises {
       exerciseBody
       createdAt
