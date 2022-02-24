@@ -29,16 +29,6 @@ html, body {
   height: 100%;
 }
 
-
-/* 
-.bg .gradient {
-  background: -webkit-linear-gradient(
-    45deg,
-    rgba(0, 0, 0, 0.7),
-    rgba(72, 15, 144, 0.4) 100%
-  );
-} */
-
 html {
   scroll-behavior: smooth;
 }
@@ -120,4 +110,30 @@ div.card {
   border-radius: 10px;
   width: 100%;
   padding: 5px 0px 25px 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 350px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border-color: white;
+}
+
+.btn {
+  width: 150px;
+  border-radius: 10px;
+  border-color: rgb(163, 163, 163);
+}
+
+/* for error text when login or signup fails */
+div {
+  color: white;
+  text-shadow: 2px 1px #000000;
 }
