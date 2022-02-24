@@ -92,14 +92,18 @@ h4 {
 }
 
 /* for about page  */
-h2, p {
+h2, h4, p {
   color: #ffffff;
+  text-shadow: 2px 1px #000000;
+}
+
+h4.card-header {
+  font-size: 25px;
 }
 
 p {
   font-size: 20px;
 }
-
 
 section.about-container {
   background-color: rgb(207, 191, 170);
@@ -107,4 +111,13 @@ section.about-container {
   width: 100%;
   padding: 10px 10px 10px 10px;
   margin-top: 35px;
+}
+
+/* for login and signup card components */
+
+div.card {
+  background-color: rgb(207, 191, 170);
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px 0px 25px 25px;
 }
