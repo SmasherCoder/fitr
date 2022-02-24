@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 // import Auth from '../../utils/auth';
 
@@ -10,6 +12,18 @@ const Navigation = () => {
 
   const [showModal, setShowModal] = useState(false);
 
+  const [navClass, setnavClass]= useState("ml-auto");
+  const [toggledNav, settoggledNav]= useState(true);
+
+  const addClass=() => {
+    if (toggledNav){
+      setnavClass("ml-auto show");
+      settoggledNav(false);
+    }else {
+      setnavClass("ml-auto");
+      settoggledNav(true);
+    }
+  }
   return (
     <>
     <Navbar bg="light" variant="light" expand="lg">
@@ -17,11 +31,9 @@ const Navigation = () => {
         <Navbar.Brand as={Link} to='/'>
           Fitr
         </Navbar.Brand>
+
         <Navbar.Collapse id='navbar'>
-          <Nav className='ml-auto'>
-            <Nav.Link as={Link} to='/'>
-              What Others Are Doing
-              </Nav.Link>
+          <Nav className={navClass} id='navHeaders'>
               <br></br>
               <Nav.Link as={Link} to='/'>
                 About Fitr
@@ -34,7 +46,9 @@ const Navigation = () => {
               <Nav.Link as={Link} to='/signup'>
                 Sign Up
               </Nav.Link>
+
                <br></br>
+
               {/* {Auth.loggedIn() ? (
                 <>
                 <Nav.Link as={Link} to='/follow'>
@@ -46,8 +60,12 @@ const Navigation = () => {
                 <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
               )} */}
           </Nav>
+          <button onClick={addClass} className="hamburger" id="hamburger">
+                <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
+              </button>
         </Navbar.Collapse>
       </Container>
+
     </Navbar>
 
     <Modal
