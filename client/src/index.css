@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* main body nav and page format */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Poppins', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -8,6 +11,82 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: 'Poppins', sans-serif, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 80%;
+  padding: 50px 50px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+
+/* 
+.bg .gradient {
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(72, 15, 144, 0.4) 100%
+  );
+} */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(228, 228, 228);
+}
+
+a.navbar-brand {
+  text-decoration: none;
+  color: white;
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
+}
+
+a.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+
+/* media query for navbar-nav */
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+} 
+
+nav a:hover {
+  text-decoration: none;
+}
+
+.container {
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h4 {
+  text-shadow: 2px 1px #ffffff;
+}
+
+.background {
+  text-shadow: 2px 1px #000000;
+}
+
+.error {
+  text-shadow: 2px 1px #ffffff;
 }
