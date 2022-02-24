@@ -27,6 +27,7 @@ const typeDefs = gql `
         description: String
         username: String
         createdAt: String
+        scheduled: String
         exercises: [Exercise]
     }
 
