@@ -51,7 +51,7 @@ const typeDefs = gql `
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         addExercise(exerciseBody: String!): Exercise
-        addWorkout(description: String!, exercises: [ID]!): Workout
+        addWorkout(description: String!, exercises: [ID]!, scheduled: String!): Workout
     }
 
 `;
