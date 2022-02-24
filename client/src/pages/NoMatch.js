@@ -2,7 +2,7 @@ import React from 'react';
 
 const NoMatch = () => {
     return (
-        <div>
+        <div className="error">
             Oops, can't find that page. 😟
         </div>
     );

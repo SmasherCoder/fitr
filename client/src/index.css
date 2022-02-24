@@ -30,14 +30,14 @@ html, body {
 }
 
 
-
+/* 
 .bg .gradient {
   background: -webkit-linear-gradient(
     45deg,
     rgba(0, 0, 0, 0.7),
     rgba(72, 15, 144, 0.4) 100%
   );
-}
+} */
 
 html {
   scroll-behavior: smooth;
@@ -50,19 +50,24 @@ body {
 a.navbar-brand {
   text-decoration: none;
   color: white;
+  font-size: 45px;
+  display: flex;
+  justify-content: center;
 }
 
 a.nav-link {
   text-decoration: none;
-  color: white
+  color: white;
+  font-size: 25px;
 }
 
+/* media query for navbar-nav */
 .navbar-nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-}
+} 
 
 nav a:hover {
   text-decoration: none;
@@ -72,4 +77,16 @@ nav a:hover {
   width: 80%;
   max-width: 1200px;
   margin: auto;
+}
+
+h4 {
+  text-shadow: 2px 1px #ffffff;
+}
+
+.background {
+  text-shadow: 2px 1px #000000;
+}
+
+.error {
+  text-shadow: 2px 1px #ffffff;
 }
