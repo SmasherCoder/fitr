@@ -74,7 +74,7 @@ nav a:hover {
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   max-width: 1200px;
   margin: auto;
 }
@@ -89,4 +89,35 @@ h4 {
 
 .error {
   text-shadow: 2px 1px #ffffff;
+}
+
+.week {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+.day {
+  margin: 5px;
+  border: #0d1b2a 3px solid;
+  width: 80%;
+  text-align: center;
+  background-color: #778DA9;
+  text-shadow: none;
+  height: 300px;
+}
+
+.day-header {
+  background-color: #415a77;
+  color: #e0e1dd;
+  padding: 10px;
+  text-align: center;
+}
+
+.workout {
+  margin: 8px;
+  padding: 8px;
+  border: #0d1b2a 3px solid;
+  border-radius: 10px;
+  background-color: #e0e1dd;
 }

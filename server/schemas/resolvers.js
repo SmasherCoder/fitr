@@ -85,7 +85,7 @@ const resolvers = {
                     const exercise = await Exercise.findById({ _id: args.exercises[i] })
                     exercises.push(exercise);
                 }
-                const workout = await Workout.create({ ...args, username: context.user.username, exercises: exercises, scheduled: args.scheduled });
+                const workout = await Workout.create({ ...args, username: context.user.username, exercises: exercises  });
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
