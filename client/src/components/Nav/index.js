@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fadumbbell } from '@fortawesome/free-solid-svg-icons';
-// import { Link } from 'react-router-dom';
-=======
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
@@ -11,25 +5,9 @@ import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
 
 // import Auth from '../../utils/auth';
->>>>>>> f6c7ed2d807274b4fb225e89e45dd3a1432494c0
 
 const Navigation = () => {
 
-<<<<<<< HEAD
-const Nav = () => {
-  const logout = event => {
-    event.preventDefault();
-    Auth.logout();
-  };
-
-  return (
-    <header className="bg-secondary mb-4 py-2 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <Link to="/">
-          <span className='icon'><FontAwesomeIcon icon={fadumbbell}></FontAwesomeIcon></span>
-          <h1>FITr</h1>
-        </Link>
-=======
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -71,7 +49,6 @@ const Nav = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
->>>>>>> f6c7ed2d807274b4fb225e89e45dd3a1432494c0
 
     <Modal
     size='lg'
@@ -95,8 +72,4 @@ const Nav = () => {
   );
 };
 
-<<<<<<< HEAD
-export default Nav;
-=======
 export default Navigation;
->>>>>>> f6c7ed2d807274b4fb225e89e45dd3a1432494c0
