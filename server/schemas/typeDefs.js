@@ -52,6 +52,7 @@ const typeDefs = gql `
         addUser(username: String!, email: String!, password: String!): Auth
         addExercise(exerciseBody: String!): Exercise
         addWorkout(description: String!, exercises: [ID]!, scheduled: String!): Workout
+        addFriend(friendId: ID!): User
     }
 
 `;
