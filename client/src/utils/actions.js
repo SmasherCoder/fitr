@@ -1,9 +1,4 @@
+export const LOAD_USERS = "LOAD_USERS";
 export const LOAD_WORKOUTS = "LOAD_WORKOUTS";
 export const LOAD_FRIENDS = "LOAD_FRIENDS";
-
-export const ADD_WORKOUT = "ADD_WORKOUT";
-export const UPDATE_WORKOUT = "UPDATE_WORKOUT";
-export const REMOVE_WORKOUT = "REMOVE_WORKOUT";
-
-export const ADD_FRIEND = "ADD_FRIEND";
-export const REMOVE_FRIEND = "REMOVE_FRIEND";
+export const UPDATE_SELECTED_DAY = "UPDATE_SELECTED_DAY";
