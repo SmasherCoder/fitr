@@ -26,7 +26,7 @@ const userSchema = new Schema(
         ref: 'Workout'
       }
     ],
-    friends: [
+    follow: [
       {
         type: Schema.Types.ObjectId,
         ref: 'User'

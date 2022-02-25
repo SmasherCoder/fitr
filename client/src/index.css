@@ -154,6 +154,7 @@ div {
   display: flex;
   justify-content: space-around;
   margin: 30px 0;
+
 }
 
 .day {
@@ -162,7 +163,6 @@ div {
   width: 80%;
   text-align: center;
   background-color: #778DA9;
-  text-shadow: none;
   height: 300px;
 }
 
@@ -179,6 +179,8 @@ div {
   border: #0d1b2a 3px solid;
   border-radius: 10px;
   background-color: #e0e1dd;
+  color: #0d1b2a;
+  text-shadow: 2px 1px #e0e1dd;
 }
 .hamburger {
   background-color: transparent;
@@ -197,9 +199,38 @@ div {
   margin-left: 65%;
 }
 
+.workoutListItem {
+  background-color: #778DA9;
+  margin: 7px;
+  border: 4px solid #1b263b;
+}
+
+.itemHeader {
+  background-color: #415a77;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.itemBody {
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.exercise {
+  margin: 10px;
+  background-color:#e0e1dd;
+  color: #0d1b2a;
+  text-shadow: 2px 1px #e0e1dd;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid #0d1b2a;
+}
+
 @media only screen and (min-width: 200px) and (max-width: 1300px) {
 
-   #navHeaders {
+  #navHeaders {
     display: none;
   } 
 

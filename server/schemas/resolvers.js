@@ -37,6 +37,10 @@ const resolvers = {
         workout: async ( parent, { _id }) => {
             return Workout.findOne({ _id });
         },
+        allWorkouts: async () => {
+            return await Workout.find()
+            .populate("exercises")
+        },
         allExercises: async(parent, args) => {
             return await Exercise.find();
         },

@@ -43,25 +43,25 @@ export const QUERY_ALL_USERS = gql`
   }
 `
 
-// export const QUERY_ME = gql`
-//   me {
-//     username
-//     email
-//     password
-//     workouts {
-//       description
-//       createdAt
-//       scheduled
-//       exercises {
-//         exerciseBody
-//         createdAt
-//       }
-//     }
-//     follow {
-//       username
-//     }
-//   }
-// `;
+export const QUERY_ME = gql`
+  query me {
+    username
+    email
+    password
+    workouts {
+      description
+      createdAt
+      scheduled
+      exercises {
+        exerciseBody
+        createdAt
+      }
+    }
+    follow {
+      username
+    }
+  }
+`;
 
 export const QUERY_WORKOUT = gql`
   query workout($id: ID!) {
@@ -75,6 +75,20 @@ export const QUERY_WORKOUT = gql`
     }
   }
 `;
+
+export const QUERY_ALL_WORKOUTS = gql `
+{
+  allWorkouts {
+    description
+    createdAt
+    username
+    scheduled
+    exercises {
+      exerciseBody
+      createdAt
+    }
+  }
+}`
 
 export const QUERY_ALL_EXERCISES = gql`
   {
