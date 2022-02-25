@@ -5,7 +5,7 @@ import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
 import About from '../../pages/About';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faComment } from '@fortawesome/free-solid-svg-icons';
 
 // import Auth from '../../utils/auth';
 
@@ -25,17 +25,23 @@ const Navigation = () => {
       settoggledNav(true);
     }
   }
+
+  window.onresize = function(){ window.location.reload(); }
   return (
     <>
     <Navbar bg="light" variant="light" expand="lg">
       <Container fluid>
         <Navbar.Brand as={Link} to='/'>
-          Fitr
+          FIT<span className='logo'>r</span> <span className='icon'><FontAwesomeIcon icon={faComment}></FontAwesomeIcon></span>
         </Navbar.Brand>
 
         <Navbar.Collapse id='navbar'>
 
           <Nav className={navClass} id='navHeaders'>
+              <br></br>
+              <NavLink as={Link} to='/'>
+                Home
+              </NavLink>
               <br></br>
               <NavLink as={Link} to='/about'>
                 About Fitr
