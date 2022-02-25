@@ -61,9 +61,6 @@ a.nav-link {
   font-size: 25px;
 }
 
-.ml-auto {
-
-}
 
 /* media query for navbar-nav */
 .navbar-nav {
@@ -127,4 +124,13 @@ h4 {
     cursor: pointer;
   }
 
+}
+
+@media only screen and (min-width: 1300px) and (max-width: 3000px) {
+  .navbar-nav { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
