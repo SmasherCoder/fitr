@@ -1,12 +1,22 @@
 import React from 'react';
 import { ADD_FRIEND } from '../utils/mutations';
-import { useMutation } from '@apollo/client';
+import { QUERY_USER } from '../utils/queries';
+import { useMutation, useQuery } from '@apollo/client';
 import FriendList from '../components/FriendList';
+import { useParams } from 'react-router-dom'
 
 import WeekView from '../components/WeekView';
 
 const Profile = () => {
   const [addFriend] = useMutation(ADD_FRIEND);
+
+  const  { username: userParam } = useParams();
+
+  const { loading, data } =useQuery(QUERY_USER, {
+    variables: {username: userParam}
+  });
+
+  const user = data?.user || {};
   
   const handleClick = async () => {
     try {
@@ -31,6 +41,8 @@ const Profile = () => {
   </button>
 )}
 </div>
+    {!loading ? (
+      <>
       <WeekView />
       <div className="col-12 col-lg-3 mb-3">
           <FriendList
@@ -39,7 +51,9 @@ const Profile = () => {
           friends={user.friends}
           />
         </div>
-
+      </> ) : (
+        <></>
+    )}
     </div>
   )
 }

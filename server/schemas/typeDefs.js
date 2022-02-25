@@ -41,6 +41,7 @@ const typeDefs = gql `
         users: [User]
         user(username: String!): User
         workouts(username: String!): [Workout]
+        allWorkouts: [Workout]
         workout(_id: ID!): Workout
         exercises(username: String!): [Exercise]
         allExercises: [Exercise]
