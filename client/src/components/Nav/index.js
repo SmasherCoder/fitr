@@ -39,6 +39,10 @@ const Navigation = () => {
 
           <Nav className={navClass} id='navHeaders'>
               <br></br>
+              <NavLink as={Link} to='/'>
+                Home
+              </NavLink>
+              <br></br>
               <NavLink as={Link} to='/about'>
                 About Fitr
               </NavLink>
