@@ -201,12 +201,17 @@ div {
   }
 
 }
-/* 
-@media only screen and (min-width: 1300px) and (max-width: 3000px) {
-  .navbar-nav { 
+
+@media screen and (min-width: 1300px) {
+  .navbar-nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+  } 
+  
+  nav a:hover {
+    text-decoration: none;
   }
-} */
+  
+}
