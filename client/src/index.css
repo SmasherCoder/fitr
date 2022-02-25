@@ -154,7 +154,7 @@ div {
   display: flex;
   justify-content: space-around;
   margin: 30px 0;
-
+  flex-wrap: wrap;
 }
 
 .day {
@@ -164,6 +164,7 @@ div {
   text-align: center;
   background-color: #778DA9;
   height: 300px;
+  width: 160px;
 }
 
 .day-header {
