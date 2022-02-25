@@ -51,6 +51,7 @@ a {
   font-size: 25px;
 }
 
+
 /* media query for navbar-nav */
 .navbar-nav {
   display: flex;
@@ -199,4 +200,18 @@ div {
     cursor: pointer;
   }
 
+}
+
+@media screen and (min-width: 1300px) {
+  .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  } 
+  
+  nav a:hover {
+    text-decoration: none;
+  }
+  
 }

@@ -25,6 +25,8 @@ const Navigation = () => {
       settoggledNav(true);
     }
   }
+
+  window.onresize = function(){ window.location.reload(); }
   return (
     <>
     <Navbar bg="light" variant="light" expand="lg">
