@@ -63,6 +63,13 @@ a {
   font-size: 25px;
 }
 
+.navItems {
+  margin-right: 9%;
+}
+
+.logoutItem {
+  margin-right: 14%;
+}
 
 /* media query for navbar-nav */
 .navbar-nav {
@@ -197,7 +204,7 @@ div {
   width: 250px;
   font-size: 18px;
   flex-wrap: wrap;
-  margin-left: 65%;
+  margin-left: 52%;
 }
 
 .workoutListItem {
@@ -229,7 +236,11 @@ div {
   border: 2px solid #0d1b2a;
 }
 
-@media only screen and (min-width: 200px) and (max-width: 1300px) {
+@media only screen and (min-width: 600px) and (max-width: 1300px) {
+
+  .show {
+    margin-left: 70%;
+  }
 
   #navHeaders {
     display: none;
@@ -238,7 +249,24 @@ div {
   .hamburger {
     margin-top: 5px;
     display: block !important;
-    margin-left: 94%;
+    margin-left: 90%;
+    padding: 0px;
+    outline: none;
+    cursor: pointer;
+  }
+
+}
+
+@media only screen and (min-width: 200px) and (max-width: 600px) {
+
+  #navHeaders {
+    display: none;
+  } 
+
+  .hamburger {
+    margin-top: 5px;
+    display: block !important;
+    margin-left: 85%;
     padding: 0px;
     outline: none;
     cursor: pointer;
@@ -247,12 +275,6 @@ div {
 }
 
 @media screen and (min-width: 1300px) {
-  .navbar-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  } 
   
   nav a:hover {
     text-decoration: none;

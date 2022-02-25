@@ -6,6 +6,7 @@ import Signup from '../../pages/Signup';
 import About from '../../pages/About';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faComment } from '@fortawesome/free-solid-svg-icons';
+import Auth from '../../utils/auth';
 
 // import Auth from '../../utils/auth';
 
@@ -47,28 +48,18 @@ const Navigation = () => {
                 About Fitr
               </NavLink>
               <br></br>
-              <NavLink as={Link} to='/login'>
-                Login
-              </NavLink>
-              <br></br>
-              <NavLink as={Link} to='/signup'>
-                Sign Up
-              </NavLink>
-               <br></br>
 
-              {/* {Auth.loggedIn() ? (
+
+              {Auth.loggedIn() ? (
                 <>
-                <Nav.Link as={Link} to='/follow'>
-                  View Followed Friends
-                </Nav.Link>
-                <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                <Nav.Link onClick={Auth.logout}className="logoutItem">Logout</Nav.Link>
                 </>
               ) :(
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
-              )} */}
+                <NavLink as={Link} to='/login'className="navItems"> Log In-Signup</NavLink> 
+              )}
           </Nav>
-          <button onClick={addClass} className="hamburger" id="hamburger">
-                <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>
+              <button onClick={addClass} className="hamburger" id="hamburger">
+                <FontAwesomeIcon icon={faBars}/>
               </button>
         </Navbar.Collapse>
       </Container>
