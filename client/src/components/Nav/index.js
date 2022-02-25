@@ -32,7 +32,7 @@ const Navigation = () => {
     <Navbar bg="light" variant="light" expand="lg">
       <Container fluid>
         <Navbar.Brand as={Link} to='/'>
-          FIT<span className='logo'>r</span> <span className='icon'><FontAwesomeIcon icon={faComment}></FontAwesomeIcon></span>
+          FIT<span className='logo'>r</span> <span className='icon'><FontAwesomeIcon icon={faComment} /></span>
         </Navbar.Brand>
 
         <Navbar.Collapse id='navbar'>
