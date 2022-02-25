@@ -182,7 +182,7 @@ div {
   width: 250px;
   font-size: 18px;
   flex-wrap: wrap;
-  margin-left: 75%;
+  margin-left: 65%;
 }
 
 @media only screen and (min-width: 200px) and (max-width: 1300px) {
@@ -201,7 +201,7 @@ div {
   }
 
 }
-
+/* 
 @media only screen and (min-width: 1300px) and (max-width: 3000px) {
   .navbar-nav { 
     display: flex;
@@ -209,4 +209,4 @@ div {
     justify-content: space-around;
     align-items: center;
   }
-}
+} */
