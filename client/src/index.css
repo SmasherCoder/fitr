@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 /* main body nav and page format */
 body {
@@ -13,6 +14,17 @@ body {
 code {
   font-family: 'Poppins', sans-serif, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.logo {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 45px;
+  color: #ffffff;
+}
+
+.icon {
+  margin-left: 15px;
+  font-size: 33px;
 }
 
 main {
