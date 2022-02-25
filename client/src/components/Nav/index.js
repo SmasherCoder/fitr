@@ -55,7 +55,7 @@ const Navigation = () => {
                 <Nav.Link onClick={Auth.logout}className="logoutItem">Logout</Nav.Link>
                 </>
               ) :(
-                <NavLink as={Link} to='/login'className="navItems"> Log In-Signup</NavLink> 
+                <NavLink as={Link} to='/login'className="navItems"> Log n/Signup</NavLink> 
               )}
           </Nav>
               <button onClick={addClass} className="hamburger" id="hamburger">
