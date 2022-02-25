@@ -1,7 +1,7 @@
 import React from 'react';
 // import ThoughtList from '../components/ThoughtList';
 // import ThoughtForm from '../components/ThoughtForm';
-// import FriendList from '../components/FriendList';
+import FriendList from '../components/FriendList';
 //import components of our workouts and friends
 
 import Auth from '../utils/auth';
@@ -34,7 +34,7 @@ const loggedIn = Auth.loggedIn();
             />
           )} */}
         </div>
-        {/* {loggedIn && userData ? (
+        {loggedIn && userData ? (
           <div className="col-12 col-lg-3 mb-3">
             <FriendList
               username={userData.me.username}
@@ -42,7 +42,7 @@ const loggedIn = Auth.loggedIn();
               friends={userData.me.friends}
             />
           </div>
-        ) : null} */}
+        ) : null}
       </div>
     </main>
   );

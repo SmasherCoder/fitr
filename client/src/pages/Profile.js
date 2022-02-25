@@ -1,6 +1,7 @@
 import React from 'react';
 import { ADD_FRIEND } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
+import FriendList from '../components/FriendList';
 
 import WeekView from '../components/WeekView';
 
@@ -31,6 +32,14 @@ const Profile = () => {
 )}
 </div>
       <WeekView />
+      <div className="col-12 col-lg-3 mb-3">
+          <FriendList
+          username={user.username}
+          friendCount={user.friendCount}
+          friends={user.friends}
+          />
+        </div>
+
     </div>
   )
 }

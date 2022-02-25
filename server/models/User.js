@@ -26,7 +26,7 @@ const userSchema = new Schema(
         ref: 'Workout'
       }
     ],
-    follow: [
+    friends: [
       {
         type: Schema.Types.ObjectId,
         ref: 'User'
@@ -55,8 +55,8 @@ userSchema.methods.isCorrectPassword = async function(password) {
     return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual('followCount').get(function() {
-    return this.follow.length;
+userSchema.virtual('friendCount').get(function() {
+    return this.friends.length;
 });
 
 const User = model('User', userSchema);

@@ -11,6 +11,7 @@ import Navigation from "./components/Nav";
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Profile from './pages/Profile';
 import About from './pages/About';
 import NoMatch from './pages/NoMatch';
 
@@ -41,8 +42,9 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} /> 
+        <Route exact path="/profile/:username?" component={Profile} />
         <Route exact path="/about" component={About} />
-        {/* <Route exact path="/profile/:username?" component={Profile} /> */}
+        
   
         <Route component={NoMatch} /> 
         </Switch>
