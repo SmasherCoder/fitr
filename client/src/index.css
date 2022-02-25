@@ -119,7 +119,7 @@ form {
 }
 
 input {
-  width: 350px;
+  width: 80%;
   text-decoration: none;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -166,4 +166,37 @@ div {
   border: #0d1b2a 3px solid;
   border-radius: 10px;
   background-color: #e0e1dd;
+}
+.hamburger {
+  background-color: transparent;
+  border: 0;
+  color: #ffffff;
+  font-size: 24px;
+  display:none;
+}
+
+.show {
+  display:block !important;
+  display: flex;
+  width: 250px;
+  font-size: 18px;
+  flex-wrap: wrap;
+  margin-left: 65%;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 1300px) {
+
+   #navHeaders {
+    display: none;
+  } 
+
+  .hamburger {
+    margin-top: 5px;
+    display: block !important;
+    margin-left: 94%;
+    padding: 0px;
+    outline: none;
+    cursor: pointer;
+  }
+
 }
