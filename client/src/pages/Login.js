@@ -58,18 +58,18 @@ const handleFormSubmit = async event => {
               <input
                 className='form-input'
                 placeholder='Your email'
-                name='email'
+                name='loginemail'
                 type='email'
-                id='email'
+                id='loginemail'
                 value={formState.email}
                 onChange={handleChange}
               />
               <input
                 className='form-input'
                 placeholder='******'
-                name='password'
+                name='loginpassword'
                 type='password'
-                id='password'
+                id='loginpassword'
                 value={formState.password}
                 onChange={handleChange}
               />
