@@ -36,7 +36,7 @@ const handleFormSubmit = async event => {
   
     try {
         const { data } = await login({
-          variables: { ...formState }
+          variables: { ...loginformState }
         });
       
         Auth.login(data.login.token);
