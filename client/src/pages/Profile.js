@@ -6,6 +6,7 @@ import FriendList from '../components/FriendList';
 import { useParams } from 'react-router-dom'
 
 import WeekView from '../components/WeekView';
+import DayView from '../components/DayView';
 
 const Profile = () => {
   const [addFriend] = useMutation(ADD_FRIEND);
@@ -44,6 +45,9 @@ const Profile = () => {
     {!loading ? (
       <>
       <WeekView />
+
+      <DayView />
+
       <div className="col-12 col-lg-3 mb-3">
           <FriendList
           username={user.username}
