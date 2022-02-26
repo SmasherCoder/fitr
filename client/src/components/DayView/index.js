@@ -10,7 +10,13 @@ const DayView = () => {
 
     const [state, dispatch] = useWorkoutContext();
 
-    const { username: userParam } = userParams();
+    const { username: userParam } = useParams();
+
+    const { loading, data } = useQuery(QUERY_USER, {
+      variables: {username: userParam}
+    });
+  
+    const user =  data?.user || {};
 
     return (
         <div className='day'>
@@ -35,3 +41,22 @@ const DayView = () => {
 }
 
 export default DayView;
+
+{/* <div className='day'>
+<ul>
+    { !loading ? (
+        !state.currentDay ? (
+            user.workouts.map((workout) => (
+                workout.scheduled === state.currentDay ? (
+                    workout.exercises.map((exercise) => (
+                        <li>{exercise.exerciseBody}</li>
+                    ))
+                ):(<li></li>
+                )
+            ))
+        ): (
+            <li>Select the Day you would like to view</li>
+        ) : ( <></>)) }</ul>
+        <button>"Add to Workout"</button>
+        <button>Edit Workout</button>
+</div> */}
