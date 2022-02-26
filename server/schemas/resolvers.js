@@ -35,11 +35,12 @@ const resolvers = {
 
             //add workouts (multiple)
         workout: async ( parent, { _id }) => {
-            return Workout.findOne({ _id });
+            return Workout.findOne({ _id })
+            .populate("exercises");
         },
         allWorkouts: async () => {
             return await Workout.find()
-            .populate("exercises")
+            .populate("exercises");
         },
         allExercises: async(parent, args) => {
             return await Exercise.find();

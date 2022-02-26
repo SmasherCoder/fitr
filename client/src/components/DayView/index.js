@@ -18,21 +18,29 @@ const DayView = () => {
   
     const user =  data?.user || {};
 
+    console.log(user);
+    console.log(state);
+
     return (
         <div className='day'>
             <ul>
-            { !state.currentDay ? (
+            { !loading ? (
+             state.currentDay ? (
                 user.workouts.map((workout) => (
                     workout.scheduled === state.currentDay ? (
-                        workout.exercises.map((exercise) => (
+                        <div>
+                        <p>{workout.scheduled}</p>
+                        {workout.exercises.map((exercise) => (
                             <li>{exercise.exerciseBody}</li>
-                        ))
+                        ))}
+                        </div>
                     ):(<li></li>
                     )
                 ))
             ): (
                 <li>Select the Day you would like to view</li>
-            )}
+            )
+            ): (<></>)}
             <button>Add to Workout</button>
             <button>Edit Workout</button>
           </ul>
