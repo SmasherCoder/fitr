@@ -13,10 +13,12 @@ const DayView = () => {
     const { username: userParam } = useParams();
 
     const { loading, data } = useQuery(QUERY_USER, {
-      variables: {username: userParam}
+        variables: {username: userParam}
     });
-  
+
     const user =  data?.user || {};
+
+    
 
     console.log(user);
     console.log(state);
@@ -25,11 +27,11 @@ const DayView = () => {
         <div className='day'>
             <ul>
             { !loading ? (
-             state.currentDay ? (
+            state.currentDay ? (
                 user.workouts.map((workout) => (
                     workout.scheduled === state.currentDay ? (
                         <div>
-                        <p>{workout.scheduled}</p>
+                        <p>{state.currentDay}</p>
                         {workout.exercises.map((exercise) => (
                             <li>{exercise.exerciseBody}</li>
                         ))}

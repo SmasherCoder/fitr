@@ -30,6 +30,12 @@ const resolvers = {
             return User.findOne({username})
             .select("-__v -password")
             .populate("workouts")
+            .populate({
+                path: 'workouts',
+                populate: {
+                    path: 'exercises'
+                }
+            })
             .populate("follow");
         },
 
