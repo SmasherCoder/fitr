@@ -7,6 +7,7 @@ import Auth from '../utils/auth';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
+  const [loginformState, setLoginFormState] = useState({ email: '', password: '' })
   const [login, { error }] = useMutation(LOGIN_USER);
   const [addUser, { addusererror }] = useMutation(CREATE_USER);
 
@@ -16,6 +17,15 @@ const Login = (props) => {
 
     setFormState({
       ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleloginChange = (event) => {
+    const { name, value } = event.target;
+
+    setLoginFormState({
+      ...loginformState,
       [name]: value,
     });
   };
@@ -58,20 +68,20 @@ const handleFormSubmit = async event => {
               <input
                 className='form-input'
                 placeholder='Your email'
-                name='loginemail'
+                name='email'
                 type='email'
-                id='loginemail'
-                value={formState.email}
-                onChange={handleChange}
+                id='email'
+                value={loginformState.email}
+                onChange={handleloginChange}
               />
               <input
                 className='form-input'
                 placeholder='******'
-                name='loginpassword'
+                name='password'
                 type='password'
-                id='loginpassword'
-                value={formState.password}
-                onChange={handleChange}
+                id='password'
+                value={loginformState.password}
+                onChange={handleloginChange}
               />
               <button className='btn d-block w-100' type='submit'>
                 Submit
