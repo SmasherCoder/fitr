@@ -52,10 +52,11 @@ const Navigation = () => {
 
               {Auth.loggedIn() ? (
                 <>
+                <NavLink as={Link} to='/profile' className="navItems"> My Profile </NavLink>
                 <Nav.Link onClick={Auth.logout}className="logoutItem">Logout</Nav.Link>
                 </>
               ) :(
-                <NavLink as={Link} to='/login'className="navItems"> Login/Signup</NavLink> 
+                <NavLink as={Link} to='/login' className="navItems"> Login/Signup</NavLink> 
               )}
           </Nav>
               <button onClick={addClass} className="hamburger" id="hamburger">
