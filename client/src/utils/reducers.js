@@ -35,11 +35,13 @@ export const reducer = (state, action) => {
       return {
         ...state,
         currentDay: action.day
-      };
+      }
+    }
 
+      default: 
+      return state;
     }
   }
-};
 
 export function useWorkoutReducer(initialState) {
   return useReducer(reducer, initialState);
