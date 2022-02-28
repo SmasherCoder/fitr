@@ -6,9 +6,9 @@ const { Provider } = WorkoutContext;
 
 const WorkoutProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useWorkoutReducer({
-    users: [],
-    workouts: [],
-    friends: [],
+    addModalOpen: false,
+    editModalOpen: false,
+    selectedWorkout: '',
     currentDay: ''
     
   });

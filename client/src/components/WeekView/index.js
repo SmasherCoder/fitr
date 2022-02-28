@@ -39,8 +39,6 @@ const WeekView = () => {
     });
   }
 
-  console.log(user);
-  console.log(state);
 
   if (!user.username) {
     return <div className='day-header'>User not found</div>
@@ -61,7 +59,7 @@ const WeekView = () => {
                 {workout.description}
               </p>
               ) : (
-              <p>Rest</p>
+              <></>
                 )
             ))) : (
               <></>

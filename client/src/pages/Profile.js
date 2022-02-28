@@ -3,12 +3,16 @@ import { ADD_FRIEND } from '../utils/mutations';
 import { QUERY_USER } from '../utils/queries';
 import { useMutation, useQuery } from '@apollo/client';
 import FriendList from '../components/FriendList';
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+import { useWorkoutContext } from '../utils/GlobalState';
 
 import WeekView from '../components/WeekView';
 import DayView from '../components/DayView';
+import AddWorkout from '../components/AddWorkout';
+import EditWorkout from '../components/EditWorkout';
 
 const Profile = () => {
+  
   const [addFriend] = useMutation(ADD_FRIEND);
 
   const  { username: userParam } = useParams();
@@ -28,6 +32,10 @@ const Profile = () => {
       console.error(e);
     }
   };
+
+  
+
+  
 
   return (
     <div>
@@ -58,7 +66,11 @@ const Profile = () => {
       </> ) : (
         <></>
     )}
+      <AddWorkout />
+      {/* <EditWorkout /> */}
     </div>
+
+    
   )
 }
 

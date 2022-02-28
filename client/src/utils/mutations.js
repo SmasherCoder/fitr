@@ -26,11 +26,11 @@ export const CREATE_USER = gql`
   }
 `;
 
-export const CREATE_EXERCISE = `
+export const CREATE_EXERCISE = gql`
   mutation addExercise($exerciseBody: String!) {
     addExercise(exerciseBody: $exerciseBody) {
+      _id
       exerciseBody
-      username
       createdAt
     }
   }
@@ -45,7 +45,6 @@ export const CREATE_WORKOUT = gql`
       scheduled
       exercises {
         exerciseBody
-        username
         createdAt
       }
     }
@@ -79,3 +78,11 @@ export const REMOVE_FRIEND = gql`
     }
   }
 `;
+
+export const REMOVE_WORKOUT = gql`
+  mutation RemoveWorkout($workoutId: ID!) {
+    removeWorkout(workoutId: $workoutId) {
+      _id
+    }
+  }
+`
