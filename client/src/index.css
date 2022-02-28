@@ -236,6 +236,69 @@ div {
   border: 2px solid #0d1b2a;
 }
 
+.add-modal {
+  position: fixed;
+  top: 200px;
+  left: 42%;
+  background-color:#778DA9;
+  border-radius: 15px;
+  border: solid 4px #0d1b2a;
+}
+
+.add-modal h3 {
+  text-align: center;
+  background-color:#1b263b;
+  margin: 0;
+  padding: 14px;
+}
+
+.add-modal div {
+  margin: 10px;
+}
+
+.add-modal button {
+  margin-bottom: 20px;
+  background-color: #0d1b2a;
+  padding: 12px;
+  border-radius: 10px;
+  color: #e0e1dd;
+}
+
+.selected-day {
+  margin: 5px;
+  border: #0d1b2a 3px solid;
+  width: 80%;
+  text-align: center;
+  background-color: #778DA9;
+  width: 30%;
+}
+
+.day-workout {
+  margin: 8px;
+  padding: 8px;
+  border: #0d1b2a 3px solid;
+  border-radius: 10px;
+  background-color: #e0e1dd;
+  
+}
+
+.day-workout p {
+  color: #0d1b2a;
+  text-shadow: 2px 1px #e0e1dd;
+}
+
+.selected-day button {
+  margin-bottom: 20px;
+  background-color: #0d1b2a;
+  padding: 12px;
+  border-radius: 10px;
+  color: #e0e1dd;
+}
+
+ul {
+  list-style: none;
+}
+
 @media only screen and (min-width: 600px) and (max-width: 1300px) {
 
   .show {

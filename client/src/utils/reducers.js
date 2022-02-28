@@ -1,31 +1,34 @@
 import { useReducer } from 'react';
 
 import { 
-  LOAD_WORKOUTS,
-  LOAD_FRIENDS,
-  LOAD_USERS,
+  TOGGLE_ADD_WORKOUT,
+  TOGGLE_EDIT_WORKOUT,
   UPDATE_SELECTED_DAY
   }  from "./actions";
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    case LOAD_WORKOUTS:
+    case TOGGLE_ADD_WORKOUT: {
       return {
         ...state,
-        workouts: [...action.workouts]
-      };
+        addModalOpen: !state.addModalOpen
+      }
+    }
 
-    case LOAD_FRIENDS: 
+    case TOGGLE_EDIT_WORKOUT: {
       return {
         ...state,
-        friends: [...action.friends]
-      };
+        editModalOpen: !state.editModalOpen,
+        selectedWorkout: action.selectedWorkout
+      }
+    }
 
-    case LOAD_USERS:
-      return {
-        ...state,
-        users: [...action.users]
-      };
+    // case UPDATE_SELECTED_WORKOUT: {
+    //   return {
+    //     ...state,
+    //     selectedWorkout: action.selectedWorkout
+    //   }
+    // }
 
     case UPDATE_SELECTED_DAY: {
 

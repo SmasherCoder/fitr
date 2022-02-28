@@ -18,7 +18,6 @@ const typeDefs = gql `
     type Exercise {
         _id: ID
         exerciseBody: String
-        username: String
         createdAt: String
     }
 
@@ -43,7 +42,6 @@ const typeDefs = gql `
         workouts(username: String!): [Workout]
         allWorkouts: [Workout]
         workout(_id: ID!): Workout
-        exercises(username: String!): [Exercise]
         allExercises: [Exercise]
         exercise(_id: ID!): Exercise
     }
@@ -54,6 +52,7 @@ const typeDefs = gql `
         addExercise(exerciseBody: String!): Exercise
         addWorkout(description: String!, exercises: [ID]!, scheduled: String!): Workout
         addFriend(friendId: ID!): User
+        removeWorkout(workoutId: ID!): Workout
     }
 
 `;

@@ -59,7 +59,7 @@ const WeekView = () => {
                 {workout.description}
               </p>
               ) : (
-              <p>Rest</p>
+              <></>
                 )
             ))) : (
               <></>
