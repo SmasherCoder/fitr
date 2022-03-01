@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 /* main body nav and page format */
 body {
@@ -15,6 +16,17 @@ code {
     monospace;
 }
 
+.logo {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 45px;
+  color: #ffffff;
+}
+
+.icon {
+  margin-left: 15px;
+  font-size: 33px;
+}
+
 main {
   margin: 0 auto;
   max-width: 80%;
@@ -28,16 +40,6 @@ main {
 html, body {
   height: 100%;
 }
-
-
-/* 
-.bg .gradient {
-  background: -webkit-linear-gradient(
-    45deg,
-    rgba(0, 0, 0, 0.7),
-    rgba(72, 15, 144, 0.4) 100%
-  );
-} */
 
 html {
   scroll-behavior: smooth;
@@ -55,10 +57,18 @@ a.navbar-brand {
   justify-content: center;
 }
 
-a.nav-link {
+a {
   text-decoration: none;
   color: white;
   font-size: 25px;
+}
+
+.navItems {
+  margin-right: 9%;
+}
+
+.logoutItem {
+  margin-right: 14%;
 }
 
 /* media query for navbar-nav */
@@ -74,7 +84,7 @@ nav a:hover {
 }
 
 .container {
-  width: 80%;
+  width: 90%;
   max-width: 1200px;
   margin: auto;
 }
@@ -89,4 +99,273 @@ h4 {
 
 .error {
   text-shadow: 2px 1px #ffffff;
+}
+
+/* for about page  */
+h2, h4, p {
+  color: #ffffff;
+  text-shadow: 2px 1px #000000;
+}
+
+h4.card-header {
+  font-size: 25px;
+}
+
+p {
+  font-size: 20px;
+}
+
+section.about-container {
+  background-color: rgb(207, 191, 170);
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px 10px 10px 10px;
+  margin-top: 35px;
+}
+
+/* for login and signup card components */
+
+div.card {
+  background-color: rgb(207, 191, 170);
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px 0px 25px 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  width: 80%;
+  text-decoration: none;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border-color: white;
+}
+
+.btn {
+  width: 150px;
+  border-radius: 10px;
+  border-color: rgb(163, 163, 163);
+}
+
+/* for error text when login or signup fails */
+div {
+  color: white;
+  text-shadow: 2px 1px #000000;
+}
+.week {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.day {
+  margin: 5px;
+  border: #0d1b2a 3px solid;
+  width: 80%;
+  text-align: center;
+  background-color: #778DA9;
+  height: 300px;
+  width: 160px;
+}
+
+.day-header {
+  background-color: #415a77;
+  color: #e0e1dd;
+  padding: 10px;
+  text-align: center;
+}
+
+.workout {
+  margin: 8px;
+  padding: 8px;
+  border: #0d1b2a 3px solid;
+  border-radius: 10px;
+  background-color: #e0e1dd;
+  color: #0d1b2a;
+  text-shadow: 2px 1px #e0e1dd;
+}
+.hamburger {
+  background-color: transparent;
+  border: 0;
+  color: #ffffff;
+  font-size: 24px;
+  display:none;
+}
+
+.show {
+  display:block !important;
+  display: flex;
+  width: 250px;
+  font-size: 18px;
+  flex-wrap: wrap;
+  margin-left: 52%;
+}
+
+.workoutListItem {
+  background-color: #778DA9;
+  margin: 7px;
+  border: 4px solid #1b263b;
+}
+
+.itemHeader {
+  background-color: #415a77;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.itemBody {
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.exercise {
+  margin: 10px;
+  background-color:#e0e1dd;
+  color: #0d1b2a;
+  text-shadow: 2px 1px #e0e1dd;
+  padding: 5px;
+  border-radius: 10px;
+  border: 2px solid #0d1b2a;
+}
+
+.add-modal {
+  position: fixed;
+  top: 100px;
+  left: 30%;
+  background-color:#778DA9;
+  border-radius: 15px;
+  border: solid 4px #0d1b2a;
+}
+
+.add-modal h3 {
+  text-align: center;
+  background-color:#1b263b;
+  margin: 0;
+  padding: 14px;
+}
+
+.add-modal button {
+  margin-bottom: 20px;
+  background-color: #0d1b2a;
+  padding: 12px;
+  border-radius: 10px;
+  color: #e0e1dd;
+}
+
+.selected-day {
+  margin: 5px;
+  border: #0d1b2a 3px solid;
+  width: 80%;
+  text-align: center;
+  background-color: #778DA9;
+  width: 35%;
+  display: flex;
+}
+
+.day-workout {
+  margin: 8px;
+  padding: 8px;
+  border: #0d1b2a 3px solid;
+  border-radius: 10px;
+  background-color: #e0e1dd;
+  
+}
+
+.day-workout p {
+  color: #0d1b2a;
+  text-shadow: 2px 1px #e0e1dd;
+}
+
+.selected-day button {
+  margin-bottom: 20px;
+  background-color: #0d1b2a;
+  padding: 12px;
+  border-radius: 10px;
+  color: #e0e1dd;
+}
+
+.friend-list {
+  background-color: #778DA9;
+  border: 4px solid #0d1b2a;
+  padding: 10px;
+}
+
+.friend-list button {
+  margin: 10px;
+  
+}
+
+.friend-list button a {
+  color:#0d1b2a;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p.workout {
+  font-size: 13px;
+}
+
+/* for footer */
+footer p {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1300px) {
+
+  .show {
+    margin-left: 70%;
+  }
+
+  #navHeaders {
+    display: none;
+  } 
+
+  .hamburger {
+    margin-top: 5px;
+    display: block !important;
+    margin-left: 90%;
+    padding: 0px;
+    outline: none;
+    cursor: pointer;
+  }
+
+}
+
+@media only screen and (min-width: 200px) and (max-width: 600px) {
+
+  #navHeaders {
+    display: none;
+  } 
+
+  .hamburger {
+    margin-top: 5px;
+    display: block !important;
+    margin-left: 85%;
+    padding: 0px;
+    outline: none;
+    cursor: pointer;
+  }
+
+}
+
+@media screen and (min-width: 1300px) {
+  
+  nav a:hover {
+    text-decoration: none;
+  }
+  
 }
