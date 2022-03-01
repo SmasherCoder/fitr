@@ -5,6 +5,11 @@ This is a workout application where the user can post their workout sessions and
 These workouts are presented in a daily and weekly format where the users can review their exercise routine. 
 
 
+| ***Home Page***                   | ***Login/Signup Page***                |
+| --------------------------------- | ------------------------------- |
+| ![View](screenshot.png)     | ![View](screenshot2.png) |
+| ***Profile***                   | ***Friend's List***                |
+| ![View](screenshot3.png) | ![View](screenshot4.png)
 
 ## Table of Contents
 
