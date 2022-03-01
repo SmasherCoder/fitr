@@ -72,6 +72,7 @@ const DayView = () => {
                 <li>Select the Day you would like to view</li>
             )
             ): (<></>)}
+             <br></br>
             <button onClick={openAddModal}>Add Workout</button>
             
           </ul>

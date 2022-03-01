@@ -113,6 +113,18 @@ const resolvers = {
                 console.log(e)
             }
         },
+        addFriend: async (parent, { friendId }, context) => {
+            try {
+                const updatedUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { follow: friendId } },
+                    { new: true }
+                ).populate('follow');
+                return updatedUser
+            } catch (e) {
+                console.log(e);
+            }
+        },
         removeWorkout: async (parent, args, context) => {
             try {
                 const workout = await Workout.findOneAndDelete(args);

@@ -14,6 +14,7 @@ import Signup from './pages/Signup';
 import Profile from './pages/Profile';
 import About from './pages/About';
 import NoMatch from './pages/NoMatch';
+import Footer from './components/Footer';
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -50,6 +51,7 @@ function App() {
         </Switch>
         </div>
         </WorkoutProvider>
+        <Footer/>
         </>
       </Router>
     </ApolloProvider>

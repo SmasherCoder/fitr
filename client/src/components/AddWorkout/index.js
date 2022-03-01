@@ -127,6 +127,7 @@ const AddWorkout = () => {
     <div>
       <label for="scheduled">Select day of week</label>
       <select name="scheduled" name="scheduled" onChange={handleWorkoutChange}>
+        <option value=''>Select a day</option>
         <option value="Monday">Monday</option>
         <option value="Tuesday">Tuesday</option>
         <option value="Wednesday">Wednesday</option>

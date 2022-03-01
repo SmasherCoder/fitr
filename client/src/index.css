@@ -238,8 +238,8 @@ div {
 
 .add-modal {
   position: fixed;
-  top: 200px;
-  left: 42%;
+  top: 100px;
+  left: 30%;
   background-color:#778DA9;
   border-radius: 15px;
   border: solid 4px #0d1b2a;
@@ -250,10 +250,6 @@ div {
   background-color:#1b263b;
   margin: 0;
   padding: 14px;
-}
-
-.add-modal div {
-  margin: 10px;
 }
 
 .add-modal button {
@@ -270,7 +266,8 @@ div {
   width: 80%;
   text-align: center;
   background-color: #778DA9;
-  width: 30%;
+  width: 35%;
+  display: flex;
 }
 
 .day-workout {
@@ -295,8 +292,36 @@ div {
   color: #e0e1dd;
 }
 
+.friend-list {
+  background-color: #778DA9;
+  border: 4px solid #0d1b2a;
+  padding: 10px;
+}
+
+.friend-list button {
+  margin: 10px;
+  
+}
+
+.friend-list button a {
+  color:#0d1b2a;
+}
+
 ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p.workout {
+  font-size: 13px;
+}
+
+/* for footer */
+footer p {
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1300px) {

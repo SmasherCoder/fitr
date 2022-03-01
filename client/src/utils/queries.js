@@ -46,25 +46,30 @@ export const QUERY_ALL_USERS = gql`
 `
 
 export const QUERY_ME = gql`
-  query me {
+
+query Me {
+  me {
     _id
     username
     email
-    password
     workouts {
-      _id
-      description
-      createdAt
       scheduled
       exercises {
-        exerciseBody
         createdAt
+        exerciseBody
+        _id
       }
+      createdAt
+      username
+      description
+      _id
     }
     follow {
       username
     }
+    followCount
   }
+}
 `;
 
 export const QUERY_WORKOUT = gql`

@@ -33,10 +33,6 @@ const Profile = () => {
     }
   };
 
-  
-
-  
-
   return (
     <div>
       <div className="flex-row mb-3">
@@ -59,8 +55,8 @@ const Profile = () => {
       <div className="col-12 col-lg-3 mb-3">
           <FriendList
           username={user.username}
-          friendCount={user.friendCount}
-          friends={user.friends}
+          followCount={user.followCount}
+          follow={user.follow}
           />
         </div>
       </> ) : (
