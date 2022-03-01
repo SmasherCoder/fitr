@@ -238,8 +238,8 @@ div {
 
 .add-modal {
   position: fixed;
-  top: 200px;
-  left: 42%;
+  top: 100px;
+  left: 30%;
   background-color:#778DA9;
   border-radius: 15px;
   border: solid 4px #0d1b2a;
@@ -250,10 +250,6 @@ div {
   background-color:#1b263b;
   margin: 0;
   padding: 14px;
-}
-
-.add-modal div {
-  margin: 10px;
 }
 
 .add-modal button {
@@ -293,6 +289,21 @@ div {
   padding: 12px;
   border-radius: 10px;
   color: #e0e1dd;
+}
+
+.friend-list {
+  background-color: #778DA9;
+  border: 4px solid #0d1b2a;
+  padding: 10px;
+}
+
+.friend-list button {
+  margin: 10px;
+  
+}
+
+.friend-list button a {
+  color:#0d1b2a;
 }
 
 ul {
