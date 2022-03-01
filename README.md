@@ -8,7 +8,7 @@ These workouts are presented in a daily and weekly format where the users can re
 | ***Home Page***                   | ***Login/Signup Page***                |
 | --------------------------------- | ------------------------------- |
 | ![View](screenshot.png)     | ![View](screenshot2.png) |
-| ***Profile***                   | ***Friend's List***                |
+| ***Profile Page***                   | ***Friend's List***                |
 | ![View](screenshot3.png) | ![View](screenshot4.png)
 
 ## Table of Contents
@@ -50,6 +50,18 @@ https://fitrfitr.herokuapp.com/
 
 ## Tests <a name="tests"></a>
 There are currently no tests for this application.
+
+## Questions <a name="questions"></a>
+
+If You have any questions please [**eMail**](mailto:akhilasrinagula@gmail.com) me.
+
+Check out more of our work on
+  * [**Akhila's GitHub**](https://github.com/akhilasrinagula)
+  * [**Dustin's GitHub**](https://github.com/dustin2400)
+  * [**Mekayla's Github**](https://github.com/trujilml)
+  * [**Abel's Github**](https://github.com/AKim47)
+  * [**Travis's Github**](https://github.com/smashercoder)
+
 
 
 
