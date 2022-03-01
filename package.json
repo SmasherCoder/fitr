@@ -22,6 +22,7 @@
   "homepage": "https://github.com/SmasherCoder/fitr#readme",
   "dependencies": {
     "@apollo/client": "^3.5.9",
-    "concurrently": "^7.0.0"
+    "concurrently": "^7.0.0",
+    "node": "^17.4.0"
   }
 }
