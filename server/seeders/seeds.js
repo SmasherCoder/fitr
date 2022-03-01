@@ -7,6 +7,10 @@ db.once('open', async () => {
   await Workout.deleteMany({});
   await User.deleteMany({});
 
+  const userCollection = db.collection("user");
+  const workoutCollectoin = db.collection("workout");
+  const exerciseCollection = db.collection("exercise");
+
   // create user data
   const userData = [];
 
@@ -22,16 +26,14 @@ db.once('open', async () => {
 
   // create follows
   for (let i = 0; i < 100; i += 1) {
-    console.log(createdUsers.insertedCount);
     const randomUserIndex = Math.floor(Math.random() * createdUsers.insertedCount);
-    console.log(randomUserIndex);
-    const { _id: userId } = createdUsers[randomUserIndex];
+    const { _id: userId } = createdUsers.insertedIds[randomUserIndex];
 
     let followId = userId;
 
     while (followId === userId) {
-      const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
-      followId = createdUsers[randomUserIndex];
+          const randomUserIndex = Math.floor(Math.random() * createdUsers.insertedCount);
+      followId = createdUsers.insertedIds[randomUserIndex];
     }
 
     await User.updateOne({ _id: userId }, { $addToSet: { follow: followId } });
@@ -40,14 +42,16 @@ db.once('open', async () => {
   // create workouts
   let createdWorkouts = [];
   for (let i = 0; i < 100; i += 1) {
-    const workoutText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+    const description = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+    const scheduled = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
-    const { username, _id: userId } = createdUsers[randomUserIndex];
+    const randomUserIndex = Math.floor(Math.random() * createdUsers.insertedCount);
+    const { username, _id: userId } = userData[randomUserIndex];
 
-    const createdWorkout = await Workout.create({ workoutText, username });
 
-    const updatedUser = await User.updateOne(
+    const createdWorkout = await Workout.create({ description, scheduled, username });
+
+    await User.updateOne(
       { _id: userId },
       { $push: { workout: createdWorkout._id } }
     );
@@ -59,10 +63,10 @@ db.once('open', async () => {
   for (let i = 0; i < 100; i += 1) {
     const exerciseBody = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
-    const randomUserIndex = Math.floor(Math.random() * createdUsers.length);
-    const { username } = createdUsers[randomUserIndex];
+    const randomUserIndex = Math.floor(Math.random() * createdUsers.insertedCount);
+    const { username } = userData[randomUserIndex];
 
-    const randomWorkoutIndex = Math.floor(Math.random() * createdThoughts.length);
+    const randomWorkoutIndex = Math.floor(Math.random() * createdWorkouts.length);
     const { _id: workoutId } = createdWorkouts[randomWorkoutIndex];
 
     await Workout.updateOne(

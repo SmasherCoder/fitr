@@ -30,19 +30,26 @@ const resolvers = {
             return User.findOne({username})
             .select("-__v -password")
             .populate("workouts")
+            .populate({
+                path: 'workouts',
+                populate: {
+                    path: 'exercises'
+                }
+            })
             .populate("follow");
         },
 
             //add workouts (multiple)
         workout: async ( parent, { _id }) => {
-            return Workout.findOne({ _id });
+            return Workout.findOne({ _id })
+            .populate("exercises");
+        },
+        allWorkouts: async () => {
+            return await Workout.find()
+            .populate("exercises");
         },
         allExercises: async(parent, args) => {
             return await Exercise.find();
-        },
-        exercises: async( parent, { username }, context) => {
-            return await Exercise.find({ username: username });
-
         },
         exercise: async( parent, {_id}, context) => {
             return await Exercise.findById({ _id })
@@ -85,7 +92,7 @@ const resolvers = {
                     const exercise = await Exercise.findById({ _id: args.exercises[i] })
                     exercises.push(exercise);
                 }
-                const workout = await Workout.create({ ...args, username: context.user.username, exercises: exercises, scheduled: args.scheduled });
+                const workout = await Workout.create({ ...args, username: context.user.username, exercises: exercises  });
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
@@ -99,11 +106,32 @@ const resolvers = {
             throw new AuthenticationError("Not logged in!");
         },
         addExercise: async (parent, args, context) => {
-            if (context.user) {
-                const exercise = await Exercise.create({ ...args, username: context.user.username });
+            try {
+                const exercise = await Exercise.create(args);
                 return exercise;
+            } catch (e) {
+                console.log(e)
             }
-            throw new AuthenticationError('Not logged in!');
+        },
+        addFriend: async (parent, { friendId }, context) => {
+            try {
+                const updatedUser = await User.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { follow: friendId } },
+                    { new: true }
+                ).populate('follow');
+                return updatedUser
+            } catch (e) {
+                console.log(e);
+            }
+        },
+        removeWorkout: async (parent, args, context) => {
+            try {
+                const workout = await Workout.findOneAndDelete(args);
+                return workout
+            } catch (e) {
+                console.log(e);
+            }
         }
         // same with friends functionality - friend model must be added
     }
