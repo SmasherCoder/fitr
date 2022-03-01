@@ -57,8 +57,8 @@ export const ADD_FRIEND = gql`
     addFriend(friendId: $id) {
       _id
       username
-      friendCount
-      friends {
+      followCount
+      follow {
         _id
         username
       }

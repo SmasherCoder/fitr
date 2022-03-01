@@ -7,6 +7,8 @@ import About from '../../pages/About';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faComment } from '@fortawesome/free-solid-svg-icons';
 import Auth from '../../utils/auth';
+import { useQuery } from '@apollo/client';
+import { QUERY_ME } from '../../utils/queries';
 
 // import Auth from '../../utils/auth';
 
@@ -17,6 +19,7 @@ const Navigation = () => {
   const [navClass, setnavClass]= useState("ml-auto");
   const [toggledNav, settoggledNav]= useState(true);
 
+
   const addClass=() => {
     if (toggledNav){
       setnavClass("ml-auto show");
@@ -26,6 +29,10 @@ const Navigation = () => {
       settoggledNav(true);
     }
   }
+
+  const { loading, data } = useQuery(QUERY_ME);
+
+  // const user = data?.me || data?.user || {};
 
   window.onresize = function(){ window.location.reload(); }
   return (
@@ -52,7 +59,10 @@ const Navigation = () => {
 
               {Auth.loggedIn() ? (
                 <>
-                <NavLink as={Link} to='/profile' className="navItems"> My Profile </NavLink>
+                { !data ? (<></>) : (
+                <Nav.Link as={Link} to={`/profile/${data.me.username}`}>My Profile</Nav.Link>
+                )}
+
                 <Nav.Link onClick={Auth.logout}className="logoutItem">Logout</Nav.Link>
                 </>
               ) :(
