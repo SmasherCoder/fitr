@@ -37,9 +37,11 @@ SO THAT I can view their workouts.
 
 ## Repository <a name="repository"></a>
 
+https://github.com/SmasherCoder/fitr.git
 
 ## Heroku <a name="heroku"></a>
 
+https://fitrfitr.herokuapp.com/
 
 ## Tests <a name="tests"></a>
 There are currently no tests for this application.
