@@ -46,7 +46,9 @@ export const QUERY_ALL_USERS = gql`
 `
 
 export const QUERY_ME = gql`
-  query me {
+query Me
+{
+  me {
     _id
     username
     email
@@ -65,6 +67,7 @@ export const QUERY_ME = gql`
       username
     }
   }
+}
 `;
 
 export const QUERY_WORKOUT = gql`
