@@ -62,10 +62,11 @@ const Navigation = () => {
                 { !data ? (<></>) : (
                 <Nav.Link as={Link} to={`/profile/${data.me.username}`}>My Profile</Nav.Link>
                 )}
+
                 <Nav.Link onClick={Auth.logout}className="logoutItem">Logout</Nav.Link>
                 </>
               ) :(
-                <NavLink as={Link} to='/login'className="navItems"> Login/Signup</NavLink> 
+                <NavLink as={Link} to='/login' className="navItems"> Login/Signup</NavLink> 
               )}
           </Nav>
               <button onClick={addClass} className="hamburger" id="hamburger">

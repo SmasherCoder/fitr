@@ -46,6 +46,7 @@ export const QUERY_ALL_USERS = gql`
 `
 
 export const QUERY_ME = gql`
+
 query Me {
   me {
     _id
