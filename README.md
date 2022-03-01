@@ -7,9 +7,9 @@ These workouts are presented in a daily and weekly format where the users can re
 
 | ***Home Page***                   | ***Login/Signup Page***                |
 | --------------------------------- | ------------------------------- |
-| ![View](screenshot.png)     | ![View](screenshot2.png) |
+| ![View](homepage.png)     | ![View](loginpage.png) |
 | ***Profile Page***                   | ***Friend's List***                |
-| ![View](screenshot3.png) | ![View](screenshot4.png)
+| ![View](profilepage.png) | ![View](friendlist.png)
 
 ## Table of Contents
 
