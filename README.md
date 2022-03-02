@@ -1,6 +1,6 @@
 ## Description
 
-Fitr is a workout application where the user can post their workout sessions and also share the workouts with their followers.
+FITr is a workout application where the user can post their workout sessions and also share the workouts with their followers.
 
 These workouts are presented in a daily and weekly format where the users can review their exercise routine. 
 
@@ -37,11 +37,11 @@ These workouts are presented in a daily and weekly format where the users can re
 ```text
 As a fitr user
 
-I WANT to be able to add excercises to different days of the week 
-SO THAT I can have a customized workout plan.
+I WANT to be able to add exercises to different days of the week 
+SO THAT I can have a customized workout plan
 
 I WANT to be able to share my workouts with others and also follow them 
-SO THAT I can view their workouts.
+SO THAT I can view their workouts
 ```
 
 
