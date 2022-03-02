@@ -4,7 +4,7 @@ Fitr is a workout application where the user can post their workout sessions and
 
 These workouts are presented in a daily and weekly format where the users can review their exercise routine. 
 
----
+
 
 | ***Home Page***                   | ***Login/Signup Page***                |
 | --------------------------------- | ------------------------------- |
@@ -12,7 +12,7 @@ These workouts are presented in a daily and weekly format where the users can re
 | ***Profile Page***                   | ***Friend's List***                |
 | ![View](profilepage.png) | ![View](friendlist.png)
 
----
+
 
 ## Table of Contents
 
@@ -22,7 +22,7 @@ These workouts are presented in a daily and weekly format where the users can re
 * [Heroku](#heroku)
 * [Tests](#tests)
 * [Questions](#questions)
----
+
 
 ## Technology Used <a name="technologyused"></a>
 
@@ -74,7 +74,9 @@ Check out more of our work on
 
 
 
-    Made with ❤️ by Akhila | Dustin | Mekayla | Abel | Travis
+
+
+Made with ❤️ by Akhila | Dustin | Mekayla | Abel | Travis
 
     
 
