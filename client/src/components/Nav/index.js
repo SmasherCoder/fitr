@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
 import Login from '../../pages/Login';
@@ -32,7 +32,9 @@ const Navigation = () => {
 
   const { loading, data } = useQuery(QUERY_ME);
 
-  // const user = data?.me || data?.user || {};
+  
+
+  
 
   window.onresize = function(){ window.location.reload(); }
   return (

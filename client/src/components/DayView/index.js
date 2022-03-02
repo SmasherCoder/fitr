@@ -37,7 +37,7 @@ const DayView = () => {
     const deleteWorkout = async (id) => {
         try {
             const  { data }  = await removeWorkout({
-              variables: { workoutId: id}
+              variables: { workoutId: id }
             });
           } catch (e) {
             console.log(e);
@@ -57,14 +57,14 @@ const DayView = () => {
                 <p>{state.currentDay}</p>
                 {user.workouts.map((workout) => (
                     workout.scheduled === state.currentDay ? (
-                        <div className='day-workout'>
+                        <div className='day-workout' key={workout.description}>
                         <p>{workout.description}</p>
                         {workout.exercises.map((exercise) => (
-                            <li>{exercise.exerciseBody}</li>
+                            <li key={exercise.exerciseBody}>{exercise.exerciseBody}</li>
                         ))}
                         <button onClick={() => deleteWorkout(workout._id)}>Delete Workout</button>
                         </div>
-                    ):(<li></li>
+                    ):(<li key={workout.description}></li>
                     )
                 ))}
                 </>

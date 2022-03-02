@@ -125,9 +125,12 @@ const resolvers = {
                 console.log(e);
             }
         },
-        removeWorkout: async (parent, args, context) => {
+        removeWorkout: async (parent, { workoutId }, context) => {
             try {
-                const workout = await Workout.findOneAndDelete(args);
+                const workout = await Workout.findOneAndDelete(
+                    { _id: workoutId },
+                    { new: true }
+                );
                 return workout
             } catch (e) {
                 console.log(e);

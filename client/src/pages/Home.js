@@ -30,17 +30,17 @@ const Home = () => {
           ) : (
             <div className='workoutList'>
               {workouts.map(workout => (
-                <div className='workoutListItem' key={workout}>
+                <div className='workoutListItem' key={workout.description}>
                   <div className='itemHeader'>
                     {workout.description} by <Link to={`/profile/${workout.username}`}>{workout.username}</Link>
                   </div>
-                  {/* <div className='itemBody'>
+                  <div className='itemBody'>
                     {workout.exercises.map(exercise => (
-                      <div className='exercise'>
+                      <div className='exercise' key={exercise.exerciseBody}>
                         {exercise.exerciseBody}
                       </div>
                     ))}
-                  </div> */}
+                  </div>
                 </div>
               ))}
             </div>

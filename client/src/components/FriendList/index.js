@@ -11,7 +11,7 @@ return (
             {username}'s {followCount} {followCount === 1 ? 'friend' : 'friends'}
         </h5>
         {follow.map(friend => (
-            <button className = "btn w-100 display-block mb-2" key={friend._id}>
+            <button className = "btn w-100 display-block mb-2" key={friend.username}>
                 <Link to={`/profile/${friend.username}`}>{friend.username}</Link>
             </button>
         ))}
