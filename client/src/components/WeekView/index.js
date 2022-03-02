@@ -62,7 +62,7 @@ const WeekView = () => {
               <></>
                 )
             ))) : (
-              <></>
+              <div key={day}></div>
             )}
           </div>
         </div>
